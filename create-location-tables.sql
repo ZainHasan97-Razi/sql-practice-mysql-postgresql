@@ -1,0 +1,78 @@
+-- For MySql
+-- id INT PRIMARY KEY AUTO_INCREMENT,
+-- For Postgresql
+-- id SERIAL PRIMARY KEY
+-- 
+-- 
+-- CREATE TABLE cities(name VARCHAR(100) PRIMARY KEY) -- 
+-- 
+-- 
+-- 
+-- CREATE TABLE locations(
+--    id SERIAL PRIMARY KEY,
+--    title VARCHAR(300),
+--    street VARCHAR(300) NOT NULL,
+--    house_number VARCHAR(10) NOT NULL,
+--    postal_code VARCHAR(5) NOT NULL,
+--    city_name VARCHAR(200) REFERENCES cities ON DELETE RESTRICT ON UPDATE CASCADE
+-- ) -- This will not allow city to be deleted and if city_name is changed then it will update it here as well
+-- 
+--
+-- 
+-- CREATE TABLE users(
+--    id SERIAL PRIMARY KEY,
+--    first_name VARCHAR(300),
+--    last_name VARCHAR(300),
+--    birthdate DATE NOT NULL,
+--    email VARCHAR(300) NOT NULL
+-- ) -- 
+-- 
+-- 
+-- 
+-- 
+-- CREATE TABLE organizers(
+--    password VARCHAR(500) NOT NULL,
+--    user_id INT PRIMARY KEY REFERENCES users ON DELETE CASCADE -- Becz we have (1 to 1) relation so we can set forgein key as primary key
+-- ) -- 
+-- 
+-- 
+-- 
+-- CREATE TABLE tags(name VARCHAR(100) PRIMARY KEY) -- 
+-- 
+-- 
+-- CREATE TABLE events(
+--    id SERIAL PRIMARY KEY,
+--    name VARCHAR(300) NOT NULL CHECK(LENGTH(name) > 2),
+--    date_planned TIMESTAMP NOT NULL,
+--    image VARCHAR(300),
+--    description TEXT NOT NULL,
+--    max_participants INT CHECK (max_participants > 0),
+--    min_age INT CHECK (min_age > 0),
+--    -- 
+--    location_id INT REFERENCES locations ON DELETE CASCADE,
+--    -- This will delete event if location is deleted
+--    -- 
+--    -- location_id INT REFERENCES locations ON DELETE SET NULL,
+--    -- This will set null location_id if location is deleted
+--    organizer_id INT REFERENCES organizers ON DELETE CASCADE -- This is (one to many) relation
+-- );
+-- 
+-- 
+-- Now for (many to many) relationship we have to make a table that have foreign keys from both tables that have m-to-m relations
+-- CREATE TABLE events_users(
+--    event_id INT REFERENCES events ON DELETE CASCADE,
+--    user_id INT REFERENCES users ON DELETE CASCADE,
+--    -- (Composite primary key) which defines with to foreign keys for eg like in above case hence
+--    -- Composite primary key are independant from m-to-m relationships! You can use them in any table
+--    PRIMARY KEY(event_id, user_id)
+-- ) -- 
+-- 
+-- 
+-- 
+CREATE TABLE events_tags(
+   event_id INT REFERENCES events ON DELETE CASCADE,
+   tag_name VARCHAR(100) REFERENCES tags ON DELETE CASCADE,
+   -- (Composite primary key) which defines with to foreign keys for eg like in above case hence
+   -- Composite primary key are independant from m-to-m relationships! You can use them in any table
+   PRIMARY KEY(event_id, tag_name)
+)
