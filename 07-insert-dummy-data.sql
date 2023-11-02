@@ -1,0 +1,64 @@
+-- INSERT INTO tags(name)
+-- VALUES('socialize'),
+--    ('learn'),
+--    ('connect'),
+--    ('dinner'),
+--    ('breakfast'); 
+-- 
+-- 
+-- 
+-- INSERT INTO cities(name)
+-- VALUES('Munich'),
+--    ('Berlin'),
+--    ('Karachi'),
+--    ('Islamabad'),
+--    ('Hyderabad');
+-- 
+-- 
+-- 
+--    
+-- INSERT INTO locations(
+--       title,
+--       street,
+--       house_number,
+--       postal_code,
+--       city_name
+--    )
+-- VALUES(
+--    'DHA location title',
+--    '26street',
+--    '99E',
+--    'Munich'
+-- ),
+-- (
+--    '',
+--    '26street',
+--    '99E',
+--    'Berlin'
+-- ),
+-- (
+--    'DHA location title',
+--    '26street',
+--    '99E',
+--    'Karachi'
+-- ),
+-- (
+--    'DHA phase 4',
+--    '26street',
+--    '99E',
+--    'Karachi'
+-- ),
+-- (
+--    'DHA location title',
+--    '26street',
+--    '99E',
+--    'Islamabad'
+-- ),
+-- (
+--    'DHA location title',
+--    '26street',
+--    '99E',
+--    'Hyderabad'
+-- )
+-- SELECT *
+-- FROM cities;
