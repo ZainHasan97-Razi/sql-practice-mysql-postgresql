@@ -25,40 +25,127 @@
 --       city_name
 --    )
 -- VALUES(
---    'DHA location title',
---    '26street',
---    '99E',
---    'Munich'
--- ),
--- (
---    '',
---    '26street',
---    '99E',
---    'Berlin'
--- ),
--- (
---    'DHA location title',
---    '26street',
---    '99E',
---    'Karachi'
--- ),
--- (
---    'DHA phase 4',
---    '26street',
---    '99E',
---    'Karachi'
--- ),
--- (
---    'DHA location title',
---    '26street',
---    '99E',
---    'Islamabad'
--- ),
--- (
---    'DHA location title',
---    '26street',
---    '99E',
---    'Hyderabad'
--- )
--- SELECT *
--- FROM cities;
+--       'DHA location title',
+--       '26street',
+--       '99E',
+--       '7550',
+--       'Munich'
+--    ),
+--    (
+--       NULL,
+--       '26street',
+--       '99E',
+--       '7550',
+--       'Berlin'
+--    ),
+--    (
+--       'DHA location title',
+--       '26street',
+--       '99E',
+--       '7550',
+--       'Karachi'
+--    ),
+--    (
+--       'DHA phase 4',
+--       '26street',
+--       '99E',
+--       '7550',
+--       'Karachi'
+--    ),
+--    (
+--       'DHA location title',
+--       '26street',
+--       '99E',
+--       '7550',
+--       'Islamabad'
+--    ),
+--    (
+--       'DHA location title',
+--       '26street',
+--       '99E',
+--       '7550',
+--       'Hyderabad'
+--    ) 
+-- 
+-- 
+-- 
+-- 
+-- INSERT INTO users(first_name, last_name, birthdate, email)
+-- VALUES ('Max', 'Schwarz', '1989-05-01', 'max@test.com'),
+--    ('Zain', 'Hasan', '1998-10-09', 'zain@test.com'),
+--    (
+--       'Musadiq',
+--       'Shafique',
+--       '1997-05-09',
+--       'musadiq@test.com'
+--    ),
+--    (
+--       'Michael',
+--       'Jordan',
+--       '1998-10-09',
+--       'mike@test.com'
+--    ) -- 
+-- 
+-- 
+-- 
+-- 
+-- INSERT INTO organizers(password, user_id)
+-- VALUES ('mypw1', 1),
+--    ('somepw2', 2) --
+-- 
+-- 
+-- 
+-- 
+-- INSERT INTO events(
+--       name,
+--       date_planned,
+--       image,
+--       description,
+--       max_participants,
+--       min_age,
+--       location_id,
+--       organizer_id
+--    )
+-- VALUES (
+--       'Mehendi event',
+--       '2023-10-09 23:59:00',
+--       'assets/dummy.png',
+--       'Lawn!',
+--       20,
+--       18,
+--       1,
+--       1
+--    ),
+--    (
+--       'Barat event',
+--       '2023-10-09 23:59:00',
+--       'assets/dummy.png',
+--       'Banquet!',
+--       20,
+--       18,
+--       4,
+--       2
+--    ) --
+-- 
+-- 
+-- 
+-- 
+-- INSERT INTO events_tags(event_id, tag_name)
+-- VALUES(1, 'socialize'),
+--    (1, 'learn'),
+--    (1, 'connect'),
+--    (2, 'breakfast'),
+--    (2, 'dinner') --
+-- 
+-- 
+-- 
+-- 
+-- INSERT INTO events_users(event_id, user_id)
+-- VALUES(1, 2),
+--    (2, 3) --
+-- 
+-- 
+-- 
+-- 
+SELECT *
+FROM events_users;
