@@ -1,0 +1,61 @@
+-- SELECT *
+-- FROM events AS e
+--    INNER JOIN locations AS loc ON e.location_id = loc.id
+-- 
+-- 
+-- 
+-- 
+-- SELECT e.id AS event_id,
+--    e.name,
+--    loc.title,
+--    loc.city_name
+-- FROM events AS e
+--    INNER JOIN locations AS loc ON e.location_id = loc.id
+-- 
+-- 
+-- 
+-- 
+-- SELECT e.id AS event_id,
+--    e.name,
+--    loc.title,
+--    loc.city_name,
+--    u.first_name,
+--    u.last_name
+-- FROM events AS e
+--    INNER JOIN locations AS loc ON e.location_id = loc.id
+--    INNER JOIN events_users As eu ON eu.event_id = e.id
+--    INNER JOIN users AS u ON eu.user_id = u.id
+-- 
+-- 
+-- 
+-- 
+-- If you are looking for all locations that have some event attached to them
+-- then inner join is the correct clause
+-- If on the other hand you want the list of all locations whether they have any
+-- related events or not then left join is correct clause
+-- 
+-- SELECT * FROM locations AS loc
+-- LEFT JOIN events AS e ON e.location_id = loc.id
+-- 
+-- 
+-- 
+-- 
+-- 
+-- If I want to get all the cities no matter if they have a attched location or not we can use a left join
+-- Sometimes you want to get all cities + any event data that exist and
+-- sometimes you only want to get real combinations that do exist in your db, only the cities that do have events in your table and you might not be interested
+-- in other ones so that's the diff between left and inner joins
+-- SELECT *
+-- FROM cities AS c
+--    LEFT JOIN locations AS loc ON loc.city_name = c.name
+--    LEFT JOIN events AS e ON e.location_id = loc.id -- 
+-- 
+-- 
+--    
+-- Also we can add durther instructions after join clause such as
+SELECT *
+FROM cities AS c
+   LEFT JOIN locations AS loc ON loc.city_name = c.name
+   LEFT JOIN events AS e ON e.location_id = loc.id -- WHERE c.name = 'Munich' -- Eg 1
+WHERE e.date_planned > '2020-01-01'
+   OR c.name = 'Hyderabad'
