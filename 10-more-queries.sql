@@ -68,4 +68,4 @@ FROM cities AS c
    INNER JOIN locations as loc ON loc.city_name = c.name
 GROUP BY c.name
 HAVING COUNT(loc.id) > 1 --
-   -- Here having is used after aggregation has happedmed
+   -- Here having is used after aggregation has happened
